@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbzJKnEXrQlfVM6wIcPo_0loI8RKitbyOlG6Wjl9ntidfrBrUTjCNXJrjNhtzyKWgX33/exec',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body>
+  <form id="myForm">
+    <label>First Name</label>
+    <br/>
+    <input name="fname" />
+    <br/>
+	<label>Last Name</label>
+    <br/>
+    <input name="lname" />
+    <br/>
+	<label>DOB</label>
+    <br/>
+    <input name="dob" />
+    <br/>
+    <label>Email</label>
+    <br/>
+    <input name="email" />
+    <br/>
+	<label>Phone</label>
+    <br/>
+    <input name="phone" />
+    <br/>
+	<label>Country</label>
+    <br/>
+    <input name="country" />
+    <br/>
+	<label>description</label>
+    <br/>
+    <textarea name="description">
+    </textarea>
+    <br/>
+	<label>Facebook ID</label>
+    <br/>
+    <input name="fb" />
+    <br/>
+	<label>Instagram ID</label>
+    <br/>
+    <input name="insta" />
+    <br/>
+	<label>Twitter ID</label>
+    <br/>
+    <input name="twitter" />
+    <br/>
+	<label>LinkedIn ID</label>
+    <br/>
+    <input name="linkedin" />
+    <br/>
+	<label>Job</label>
+    <br/>
+    <input name="job" />
+    <br/>
+	<label>Salary</label>
+    <br/>
+    <input name="salary" />
+    <br/>
+	<label>Job Location</label>
+    <br/>
+    <input name="location" />
+    <br/>
+	<label>Company</label>
+    <br/>
+    <input name="company" />
+    <br/>
+	<label>Experience</label>
+    <br/>
+    <input name="experience" />
+    <br/>
+	<label>Blood Group</label>
+    <br/>
+    <input name="blood" />
+    <br/>
+	<label>Account Type</label>
+    <br/>
+    <input name="type" />
+    
+    <br/>
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html>
